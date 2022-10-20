@@ -8,6 +8,7 @@ import { Outlet } from 'react-router-dom'
 import ResponsiveDrawer from './ResponsiveDrawer'
 import { Box } from '@mui/material'
 import RouterBreadcrumbs from './RouterBreadcrumbs'
+import logo from './isotipo.svg'
 
 const drawerWidth = 200
 
@@ -15,7 +16,7 @@ export default function Layout() {
   const [drawerOpen, setDrawerOpen] = useState(false)
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar position="fixed" sx={{ zIndex: theme => theme.zIndex.drawer + 1 }}>
+      <AppBar position="fixed" color="default" sx={{ zIndex: theme => theme.zIndex.drawer + 1 }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -27,16 +28,13 @@ export default function Layout() {
           >
             <MenuIcon />
           </IconButton>
+          <img src={logo} alt="logo" style={{ height: '38px', margin: '8px 10px 0 0' }} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Secunor Backoffice
           </Typography>
         </Toolbar>
       </AppBar>
-      <ResponsiveDrawer
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-        width={drawerWidth}
-      />
+      <ResponsiveDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} width={drawerWidth} />
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         <RouterBreadcrumbs />

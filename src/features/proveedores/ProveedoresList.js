@@ -27,6 +27,8 @@ export default function ProveedoresList() {
         pageSize={10}
         loading={networkStatus === 'loading'}
         id="_id"
+        onDelete={id => console.log(id)}
+        onEdit={(id, data) => console.log({ id, data })}
       />
     </div>
   )

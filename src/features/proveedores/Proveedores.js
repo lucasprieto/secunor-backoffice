@@ -13,7 +13,7 @@ export default function ProveedoresView() {
           </Typography>
         </Grid>
         <Grid sm={5} xs={6} alignItems="flex-start" justifyContent="flex-end" display="flex">
-          <Button component={RouterLink} to="./nuevo" variant="contained">
+          <Button color="secondary" component={RouterLink} to="./nuevo" variant="contained">
             Crear nuevo
           </Button>
         </Grid>
